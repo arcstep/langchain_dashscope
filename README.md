@@ -1,0 +1,2 @@
+# langchain_dashscope
+提供阿里云灵积模型的langchain集成
