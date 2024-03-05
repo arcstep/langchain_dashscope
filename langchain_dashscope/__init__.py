@@ -1,1 +1,1 @@
-from ._aigc_generation import ChatTongyiQW
+from ._aigc_generation import ChatDashScope

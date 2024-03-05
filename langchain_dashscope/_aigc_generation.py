@@ -122,7 +122,7 @@ def _convert_delta_to_message_chunk(
     else:
         return default_class(content=content)  # type: ignore
 
-class ChatTongyiQW(BaseChatModel):
+class ChatDashScope(BaseChatModel):
     """支持最新的阿里云积灵模型API"""
 
     @property
@@ -191,7 +191,7 @@ class ChatTongyiQW(BaseChatModel):
     取值范围为（0,1.0)，取值越大，生成的随机性越高；取值越低，生成的确定性越高。
     """
 
-    top_k: Optional[int] = 0.8
+    top_k: Optional[int] = None
     """
     生成时，采样候选集的大小。
     例如，取值为50时，仅将单次生成中得分最高的50个token组成随机采样的候选集。
