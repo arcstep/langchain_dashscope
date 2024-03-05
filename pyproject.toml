@@ -1,14 +1,18 @@
 [tool.poetry]
 name = "langchain_dashscope"
-version = "0.1.0"
-description = "Prepare DashScope for LangChain"
+version = "0.1.1"
+description = "将阿里云灵积模型（通义千问等）集成到LangChain"
 authors = ["arcstep <43801@qq.com>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+dashscope = "^1.14.1"
 
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
