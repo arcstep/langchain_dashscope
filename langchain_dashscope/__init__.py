@@ -1,1 +1,2 @@
-from ._aigc_generation import ChatDashScope
+from .aigc_generation import ChatDashScope
+from .embeddings import DashScopeEmbeddings
