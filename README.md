@@ -1,6 +1,8 @@
 # langchain_dashscope
 提供阿里云灵积模型的langchain集成。
 
+## 对话大模型可用的模型名称
+
   | 模型名 | 模型简介 | 模型输入输出限制 |
   | --- | --- | --- |
   | qwen-turbo | 通义千问超大规模语言模型，支持中文、英文等不同语言输入。 | 模型支持8k tokens上下文，为了保证正常的使用和输出，API限定用户输入为6k tokens。 |
@@ -15,3 +17,7 @@
   | baichuan2-7b-chat-v1 | |  |
   | chatglm3-6b | ChatGLM3-6B-Base 具有在 10B 以下的预训练模型中最强的性能。 |  |
 
+## 文本向量可用的模型名称
+
+- text-embedding-v1
+- text-embedding-v2
