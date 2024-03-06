@@ -123,7 +123,7 @@ def _convert_delta_to_message_chunk(
         return default_class(content=content)  # type: ignore
 
 class ChatDashScope(BaseChatModel):
-    """支持最新的阿里云积灵模型API"""
+    """支持最新的阿里云服务模型灵积的API"""
 
     @property
     def lc_secrets(self) -> Dict[str, str]:
@@ -164,10 +164,10 @@ class ChatDashScope(BaseChatModel):
     - qwen-turbo
     - qwen-plus
     - qwen-max
-    - qwen-max-1201
     - qwen-max-longcontext
     - bailian-v1
     - dolly-12b-v2
+    - ... 还有更多，请查阅官方文档
     """
 
     seed: Optional[int] = 1234
