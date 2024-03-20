@@ -239,6 +239,13 @@ class ChatDashScope(BaseChatModel):
     - False（默认）：关闭互联网搜索。
     """
 
+    allowed_special: Union[Literal["all"], AbstractSet[str]] = set()
+    """Set of special tokens that are allowed。"""
+
+    disallowed_special: Union[Literal["all"], Collection[str]] = "all"
+    """Set of special tokens that are not allowed。"""
+
+
     @classmethod
     def filter_model_kwargs(cls):
         """
@@ -446,3 +453,13 @@ class ChatDashScope(BaseChatModel):
             if run_manager:
                 await run_manager.on_llm_new_token(chunk.text, chunk=chunk)
             yield chunk
+
+    def get_token_ids(self, text: str) -> List[int]:
+        """Get the token IDs using the tiktoken package."""
+
+        encoding_model = tiktoken.get_encoding("cl100k_base")
+        return encoding_model.encode(
+            text,
+            allowed_special=self.allowed_special,
+            disallowed_special=self.disallowed_special,
+        )
