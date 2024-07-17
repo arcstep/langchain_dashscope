@@ -11,11 +11,11 @@ from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResu
 from langchain_core.pydantic_v1 import BaseModel, Field, root_validator
 
 # common types
-from typing import Type, Any, Mapping, Dict, Iterator, List, Optional, cast, Union
-
-# async
 import asyncio
-from typing import AsyncIterator
+from typing import Iterator, AsyncIterator, Collection, Literal
+from typing import Type, Any, Mapping, Dict, List, Optional, cast, Union, AbstractSet
+
+import tiktoken
 
 # all message types
 from langchain_core.messages import (
@@ -143,12 +143,6 @@ class ChatDashScope(BaseChatModel):
         if self.model:
             attributes["model"] = self.model
 
-        if self.streaming:
-            attributes["streaming"] = self.streaming
-
-        if self.return_type:
-            attributes["return_type"] = self.return_type
-
         return attributes
 
     @classmethod
@@ -246,7 +240,6 @@ class ChatDashScope(BaseChatModel):
 
     disallowed_special: Union[Literal["all"], Collection[str]] = "all"
     """Set of special tokens that are not allowed。"""
-
 
     @classmethod
     def filter_model_kwargs(cls):
