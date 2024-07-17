@@ -156,15 +156,7 @@ class ChatDashScope(BaseChatModel):
     api_key: str = None
 
     model: str = Field(default="qwen-plus")
-    """指定用于对话的通义千问模型名，目前可选择：
-    - qwen-turbo
-    - qwen-plus
-    - qwen-max
-    - qwen-max-longcontext
-    - bailian-v1
-    - dolly-12b-v2
-    - ... 还有更多，请查阅官方文档
-    """
+    """指定用于对话的通义千问模型名"""
 
     seed: Optional[int] = 1234
     """
